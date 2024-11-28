@@ -14,28 +14,11 @@ const generateImage = async (req, res) => {
 
     let imageUrl = "";
     try{
-        const res = await fetch(`https://unsplash.com/napi/search/photos?page=1&per_page=20&query=${searchText}`, {
-            "headers": {
-              "accept": "*/*",
-              "accept-language": "en-US",
-              "sec-ch-ua": "\"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\"",
-              "sec-ch-ua-mobile": "?0",
-              "sec-ch-ua-platform": "\"Windows\"",
-              "sec-fetch-dest": "empty",
-              "sec-fetch-mode": "cors",
-              "sec-fetch-site": "same-origin"
-            },
-            "referrer": "https://unsplash.com/s/photos/fish",
-            "referrerPolicy": "origin-when-cross-origin",
-            "body": null,
-            "method": "GET",
-            "mode": "cors",
-            "credentials": "include"
-          });
+        const res = await fetch(`https://api.unsplash.com/photos/random?query=${searchText}&client_id=${process.env.UNSPLASH_ACCESS_KEY}`);
+
         const data  = await res.json();
         imageUrl = getRandomLink(data);
         
-
         await imageModel.create({
             searchText: searchText,
         });
