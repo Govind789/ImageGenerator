@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.login-main-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 100px 0px;
+}
+
+.login-main-container button {
+    color: black;
+    padding: 7px 20px;
+    border-radius: 15px;
+}
+
+.login-main-container button:hover {
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+
+.login-main-container h3 {
+    font-size: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 340px;
+    gap: 16px;
+}
+
+.myinput {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 22%;
+}
+
+.myinput p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.myinput input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}

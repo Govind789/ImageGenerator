@@ -1,0 +1,40 @@
+.header-parent-container
+{
+    box-shadow: rgba(218,216,210,0.1) 0px 10px 10px -10px;
+    display: flex;
+    background-color: rgba(22,22,22);
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    color: white;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    transition: color 400ms;
+}
+
+a:hover{
+    color: rgb(241, 83, 83);
+}
+
+.left
+{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.right
+{
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}
+
+.islogin-main{
+    gap: 24px;
+    display: flex;
+    flex-direction: row;
+}

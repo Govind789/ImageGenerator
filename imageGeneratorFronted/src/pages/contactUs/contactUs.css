@@ -1,0 +1,8 @@
+a{
+    color: white;
+    text-decoration: none;
+    transition: color 400ms;
+}
+a:hover{
+    color: rgb(241, 83, 83);
+}
