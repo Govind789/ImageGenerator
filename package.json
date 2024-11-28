@@ -1,23 +1,14 @@
 {
-  "name": "imageGenerator",
+  "name": "imagegenerator",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node server.js",
-    "client": "npm run start --prefix imageGeneratorFrontend",
+    "client": "npm run start --prefix imageGeneratorFronted",
     "dev": "concurrently \"npm run start\" \"npm run client\"",
-    "build": "npm install concurrently && cd imageGeneratorFrontend && npm install && npm run build"
+    "build": "npm install concurrently && cd imageGeneratorFronted && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.1.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.4.1",
-    "concurrently": "^7.1.0"
-  }
+  "description": ""
 }
