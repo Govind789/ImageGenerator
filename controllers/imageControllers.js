@@ -16,13 +16,12 @@ const generateImage = async (req, res) => {
     try{
         const res = await fetch(`https://api.unsplash.com/photos/random?query=${searchText}&client_id=${process.env.UNSPLASH_ACCESS_KEY}`);
 
-        const data  = res.url;
+        const imageUrl  = res.url;
         // imageUrl = getRandomLink(data);
-        
 
         await imageModel.create({
             searchText: searchText,
-            url : data
+            url : imageUrl
         });
     }
     
