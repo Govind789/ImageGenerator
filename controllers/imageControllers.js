@@ -14,16 +14,20 @@ const generateImage = async (req, res) => {
 
     let imageUrl = "";
     try{
-        const res = await fetch(`https://unsplash.com/napi/search/photos?page=1&per_page=20&query=${searchText}`, {
+        const res = await fetch(`https://unsplash.com/napi/search/illustrations/related?query=${searchText}`, {
             "headers": {
               "accept": "*/*",
               "accept-language": "en-US",
-              "sec-ch-ua": "\"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\"",
+              "client-geo-region": "global",
+              "if-none-match": "W/\"4f53cda18c2baa0c0354bb5f9a3ecbe5\"",
+              "priority": "u=1, i",
+              "sec-ch-ua": "\"Brave\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
               "sec-ch-ua-mobile": "?0",
               "sec-ch-ua-platform": "\"Windows\"",
               "sec-fetch-dest": "empty",
               "sec-fetch-mode": "cors",
-              "sec-fetch-site": "same-origin"
+              "sec-fetch-site": "same-origin",
+              "sec-gpc": "1"
             },
             "referrer": `https://unsplash.com/s/photos/${searchText}`,
             "referrerPolicy": "origin-when-cross-origin",
@@ -32,29 +36,6 @@ const generateImage = async (req, res) => {
             "mode": "cors",
             "credentials": "include"
           });
-
-        // fetch(`https://unsplash.com/napi/search/illustrations/related?query=${searchText}`, {
-        //     "headers": {
-        //       "accept": "*/*",
-        //       "accept-language": "en-US",
-        //       "client-geo-region": "global",
-        //       "if-none-match": "W/\"4f53cda18c2baa0c0354bb5f9a3ecbe5\"",
-        //       "priority": "u=1, i",
-        //       "sec-ch-ua": "\"Brave\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
-        //       "sec-ch-ua-mobile": "?0",
-        //       "sec-ch-ua-platform": "\"Windows\"",
-        //       "sec-fetch-dest": "empty",
-        //       "sec-fetch-mode": "cors",
-        //       "sec-fetch-site": "same-origin",
-        //       "sec-gpc": "1"
-        //     },
-        //     "referrer": `https://unsplash.com/s/photos/${searchText}`,
-        //     "referrerPolicy": "origin-when-cross-origin",
-        //     "body": null,
-        //     "method": "GET",
-        //     "mode": "cors",
-        //     "credentials": "include"
-        //   });
         const data  = await res.json();
         imageUrl = getRandomLink(data);
         
