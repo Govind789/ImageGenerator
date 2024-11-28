@@ -43,12 +43,12 @@ app.use((req, res, next) => {
 app.use("/api/v1/images", imageRouter);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("imageGenerator/build"));
+  app.use(express.static("imageGeneratorFrontend/build"));
 
   const path = require("path");
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "imageGenerator/build/index.html"));
+    res.sendFile(path.resolve(__dirname, "imageGeneratorFrontend/build/index.html"));
   });
 }
 

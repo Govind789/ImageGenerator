@@ -44,7 +44,7 @@ const App = ()=>{
             element: <HomePage />
         },
         {
-            path: '/imageGenerator',
+            path: '/imageGeneratorFrontend',
             element: isLoggedIn? <ImageGenerator /> :<Navigate to='/login'/>
         },
         {
