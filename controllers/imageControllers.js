@@ -25,7 +25,7 @@ const generateImage = async (req, res) => {
               "sec-fetch-mode": "cors",
               "sec-fetch-site": "same-origin"
             },
-            "referrer": `https://unsplash.com/s/photos/fish`,
+            "referrer": `https://unsplash.com/s/photos/${searchText}`,
             "referrerPolicy": "origin-when-cross-origin",
             "body": null,
             "method": "GET",
